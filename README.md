@@ -1,10 +1,10 @@
 # Reacher
 This is the second project of the deep reinforcement learning nano-degree made by udacity.
-* Environment: large, square world with blue and yellow bananas.
+* Environment: rectangular space with 20 double-jointed arms that can move without collision.
 * Agent and its actions: 20 double-jointed arms that can move to target locations. Each arm action is a vector with four numbers, corresponding to torque applicable to two joints. Every entry in the action vector should be a number between -1 and 1.
 * State space: The observation space for each arm consists of 33 variables corresponding to its position, rotation, velocity, and its angular velocities.
 * Reward Function:  A reward of +0.1 is provided for each step that the agent's hand is in the goal location. Thus, the goal of your agent is to maintain its position at the target location for as many time steps as possible.
-* Task: The task is episodic, and in order to solve the environment, your agent must get an average score of +30 over 100 consecutive episodes.
+* Task: The task is episodic, and in order to solve the environment, the agent must get an average score of +30 over 100 consecutive episodes.
 
 ## Step 1: Dependencies
 
