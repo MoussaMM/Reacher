@@ -51,11 +51,12 @@ class Agent():
         # Replay memory
         self.memory = ReplayBuffer(action_size, BUFFER_SIZE, BATCH_SIZE, random_seed)
     
-    def step(self, states, actions, rewards, next_states, dones, is_learning_step):
+    def step(self, states, actions, rewards, next_states, dones, is_learning_step, saving_wrong_step_prob = 0.9):
         """Save experience in replay memory, and use random sample from buffer to learn."""
         # Save experience / reward
         for state, action, reward, next_state, done in zip(states, actions, rewards, next_states, dones):
-            self.memory.add(state, action, reward, next_state, done)
+            if reward> 0 or random.uniform(0,1) <= saving_wrong_step_prob:
+                self.memory.add(state, action, reward, next_state, done)
 
         # Learn, if enough samples are available in memory
         if len(self.memory) > BATCH_SIZE and is_learning_step:
